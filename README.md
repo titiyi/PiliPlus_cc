@@ -5,7 +5,7 @@
 
 
 <div align="center">
-    <h1>PiliPlus</h1>
+    <h1>PiliPlus_cc</h1>
 <div align="center">
 
 中文 | [English](README.en.md)
@@ -14,7 +14,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/bggRGjQaUbCoE/PiliPlus) 
 ![GitHub all releases](https://img.shields.io/github/downloads/bggRGjQaUbCoE/PiliPlus/total) 
 </div>
-    <p>使用Flutter开发的BiliBili第三方客户端</p>
+    <p>基于 PiliPlus 的哔哩哔哩第三方客户端</p>
     
 <img src="assets/screenshots/510shots_so.png" width="32%" alt="home" />
 <img src="assets/screenshots/174shots_so.png" width="32%" alt="home" />
@@ -27,7 +27,18 @@
 
 <br/>
 
-## 适配平台
+## PiliPlus_cc 的改动
+
+PiliPlus_cc 基于 [PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus)，主要改进离线缓存和字幕体验。本节对应 [`codex/offline-subtitles` 分支](https://github.com/titiyi/PiliPlus_cc/tree/codex/offline-subtitles)。
+
+- **一键缓存「稍后再看」**。在哔哩哔哩加入「稍后再看」，再用同一账号打开 PiliPlus_cc，点「稍后再看」右上角的「一键缓存全部（含字幕）」。应用按默认画质和音质将整份列表加入下载队列，普通多分 P 视频会逐 P 加入。已有视频缓存且没有可用本地字幕时，会尝试补下字幕。下载失败的任务可以重试，队列会继续处理后续任务。
+- **改进离线字幕**。缓存时可随视频保存可用字幕，并改进了番剧和课程的字幕查询。离线播放时可在底栏切换或关闭本地字幕。旧缓存可在详情菜单选择「更新字幕、分段信息」补下字幕。
+- **查看缓存占用并清理文件**。在「离线缓存」右上角点「缓存存储」，可查看目录路径和文件总大小。单删或批量删除缓存时，文件删除成功后才移除对应条目和播放进度，失败时会提示并保留条目。
+- **Android 独立安装**。应用名为 `piliplus_cc`，包名为 `com.titiyi.piliplus_cc`，使用独立签名，可与 PiliPlus 并装。PiliPlus 的应用私有缓存不会自动迁移。
+
+较早的字幕版已在 MuMu 上试用。一键缓存、断网多轨切换和 Windows 缓存删除仍待完整实测。
+
+## PiliPlus 上游适配平台
 
 - [x] Android
 - [x] iOS
@@ -215,7 +226,7 @@
 
 ## 下载
 
-可以从 [Releases](https://github.com/bggRGjQaUbCoE/PiliPlus/releases) 下载，或克隆仓库拉取代码后在本地编译。
+PiliPlus_cc 的源码位于 [`codex/offline-subtitles` 分支](https://github.com/titiyi/PiliPlus_cc/tree/codex/offline-subtitles)，可从该分支本地编译，或在本仓库的 [GitHub Actions](https://github.com/titiyi/PiliPlus_cc/actions) 中选择该分支构建。上游 PiliPlus 安装包见 [PiliPlus Releases](https://github.com/bggRGjQaUbCoE/PiliPlus/releases)。
 
 <br/>
 
